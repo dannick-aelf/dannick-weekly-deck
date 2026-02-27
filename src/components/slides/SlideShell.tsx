@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -128,13 +127,13 @@ export function SlideShell({ slides, title }: SlideShellProps) {
         animate={{ opacity: showControls ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Link
+        <a
           href="/"
           className="pointer-events-auto flex items-center gap-2 text-text-muted hover:text-text-primary transition-colors text-sm"
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span className="hidden sm:inline">{title || "Back"}</span>
-        </Link>
+        </a>
         <span className="pointer-events-auto text-text-muted text-sm font-mono">
           {current + 1} / {total}
         </span>

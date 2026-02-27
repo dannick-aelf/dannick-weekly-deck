@@ -146,7 +146,6 @@ const slides = [
     <BentoCard
       icon={<BoltIcon className="w-5 h-5" />}
       title="The Vision: Auto-Generated Assets"
-      image="/images/soulgarden-poster.png"
       description={
         <>
           Connecting <Accent>Skills + NanoBanana</Accent> to auto-generate
