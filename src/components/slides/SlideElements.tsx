@@ -218,6 +218,57 @@ export function BentoCard({
   );
 }
 
+/* ─── Split Slide (two-column: content left, image right) ─── */
+
+export function SplitSlide({
+  title,
+  label,
+  image,
+  children,
+}: {
+  title: string;
+  label?: string;
+  image: string;
+  children: ReactNode;
+}) {
+  return (
+    <motion.div
+      className="flex flex-col justify-center w-full min-h-full px-6 sm:px-12 md:px-20 py-12 max-w-6xl mx-auto"
+      variants={stagger}
+      initial="hidden"
+      animate="show"
+    >
+      <div className="mb-8">
+        {label && (
+          <motion.span
+            variants={fadeUp}
+            className="text-neon-cyan text-xs font-medium tracking-[0.2em] uppercase block mb-2"
+          >
+            {label}
+          </motion.span>
+        )}
+        <motion.h2
+          variants={fadeUp}
+          className="text-3xl sm:text-4xl font-bold text-text-primary tracking-tight"
+        >
+          {title}
+        </motion.h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <motion.div variants={stagger} className="flex flex-col gap-3 sm:gap-4">
+          {children}
+        </motion.div>
+        <motion.div
+          variants={scaleIn}
+          className="rounded-2xl border border-wire-subtle overflow-hidden"
+        >
+          <img src={image} alt={title} className="w-full h-auto" />
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ─── Inline helpers ─── */
 
 export function Bold({ children }: { children: ReactNode }) {
