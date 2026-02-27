@@ -93,6 +93,7 @@ const slides = [
       icon={<SwatchIcon className="w-5 h-5" />}
       title="Streamlining Brand Identity"
       span={2}
+      image="/images/soulgarden-brandkit.png"
       description={
         <>
           Building reusable skill workflows so every new product can spin up a{" "}
