@@ -1,0 +1,29 @@
+# weekly-presentation Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-02-27
+
+## Active Technologies
+
+- TypeScript 5.x + Next.js 15 (App Router, static export), Tailwind CSS 4, Framer Motion, Zustand, Dexie.js, CodeMirror 6, react-markdown, next-intl, @heroicons/reac (001-presentation-dashboard)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+npm test && npm run lint
+
+## Code Style
+
+TypeScript 5.x: Follow standard conventions
+
+## Recent Changes
+
+- 001-presentation-dashboard: Added TypeScript 5.x + Next.js 15 (App Router, static export), Tailwind CSS 4, Framer Motion, Zustand, Dexie.js, CodeMirror 6, react-markdown, next-intl, @heroicons/reac
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

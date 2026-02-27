@@ -1,0 +1,71 @@
+{
+  "dashboard": {
+    "title": "ChronoAI Weekly",
+    "searchPlaceholder": "Search presentations...",
+    "emptyTitle": "No presentations yet",
+    "emptyDescription": "Create your first weekly deck to get started",
+    "emptyAction": "Create First Deck",
+    "noResults": "No results found",
+    "noResultsHint": "Try a different search term",
+    "slides": "slides",
+    "slide": "slide"
+  },
+  "editor": {
+    "untitled": "Untitled Presentation",
+    "addSlide": "Add Slide",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "unsaved": "Unsaved",
+    "titlePlaceholder": "Slide Title",
+    "bodyPlaceholder": "Write in Markdown...",
+    "quotePlaceholder": "Enter your quote...",
+    "attributionPlaceholder": "— Attribution",
+    "overlayTitle": "Overlay Title (optional)",
+    "media": "Media",
+    "addMedia": "Add Media",
+    "sectionTitle": "Section Title",
+    "layouts": {
+      "title-body": "Title + Body",
+      "title-only": "Title Only",
+      "full-bleed-media": "Full Media",
+      "split": "Split",
+      "quote": "Quote"
+    },
+    "sections": {
+      "accomplishments": "Accomplishments",
+      "explorations": "Explorations"
+    }
+  },
+  "presentation": {
+    "exit": "Exit presentation",
+    "prev": "Previous slide",
+    "next": "Next slide"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "about": "About",
+    "version": "Version",
+    "dangerZone": "Danger Zone",
+    "clearData": "Clear All Data",
+    "clearConfirm": "This will permanently delete all presentations, slides, and media. This action cannot be undone.",
+    "clearAction": "Clear Everything"
+  },
+  "nav": {
+    "home": "Home",
+    "new": "New",
+    "settings": "Settings"
+  },
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save",
+    "duplicate": "Duplicate",
+    "rename": "Rename",
+    "present": "Present",
+    "deleteTitle": "Delete Presentation",
+    "deleteConfirm": "Are you sure you want to delete \"{title}\"? This action cannot be undone.",
+    "renameTitle": "Rename Presentation"
+  }
+}

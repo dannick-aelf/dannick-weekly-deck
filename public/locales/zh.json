@@ -1,0 +1,71 @@
+{
+  "dashboard": {
+    "title": "ChronoAI 周报",
+    "searchPlaceholder": "搜索演示文稿...",
+    "emptyTitle": "还没有演示文稿",
+    "emptyDescription": "创建你的第一份周报开始使用",
+    "emptyAction": "创建第一份周报",
+    "noResults": "未找到结果",
+    "noResultsHint": "请尝试其他搜索词",
+    "slides": "页",
+    "slide": "页"
+  },
+  "editor": {
+    "untitled": "未命名演示文稿",
+    "addSlide": "添加幻灯片",
+    "saving": "保存中...",
+    "saved": "已保存",
+    "unsaved": "未保存",
+    "titlePlaceholder": "幻灯片标题",
+    "bodyPlaceholder": "使用 Markdown 编写...",
+    "quotePlaceholder": "输入引用内容...",
+    "attributionPlaceholder": "—— 出处",
+    "overlayTitle": "覆盖标题（可选）",
+    "media": "媒体",
+    "addMedia": "添加媒体",
+    "sectionTitle": "章节标题",
+    "layouts": {
+      "title-body": "标题 + 正文",
+      "title-only": "仅标题",
+      "full-bleed-media": "全屏媒体",
+      "split": "分栏",
+      "quote": "引用"
+    },
+    "sections": {
+      "accomplishments": "本周成果",
+      "explorations": "探索项目"
+    }
+  },
+  "presentation": {
+    "exit": "退出演示",
+    "prev": "上一页",
+    "next": "下一页"
+  },
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "about": "关于",
+    "version": "版本",
+    "dangerZone": "危险操作",
+    "clearData": "清除所有数据",
+    "clearConfirm": "这将永久删除所有演示文稿、幻灯片和媒体文件。此操作无法撤销。",
+    "clearAction": "全部清除"
+  },
+  "nav": {
+    "home": "首页",
+    "new": "新建",
+    "settings": "设置"
+  },
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "delete": "删除",
+    "save": "保存",
+    "duplicate": "复制",
+    "rename": "重命名",
+    "present": "演示",
+    "deleteTitle": "删除演示文稿",
+    "deleteConfirm": "确定要删除"{title}"吗？此操作无法撤销。",
+    "renameTitle": "重命名演示文稿"
+  }
+}
