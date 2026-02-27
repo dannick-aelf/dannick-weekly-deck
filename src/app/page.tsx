@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   PresentationChartBarIcon,
   DocumentTextIcon,
@@ -94,23 +93,18 @@ export default function DashboardPage() {
             </p>
           </div>
         ) : (
-          <motion.div
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          >
-            <AnimatePresence>
-              {filtered.map((p) => (
-                <PresentationCard
-                  key={p.slug}
-                  presentation={p}
-                  isCurrentWeek={
-                    p.weekNumber === currentWeek.weekNumber &&
-                    p.year === currentWeek.year
-                  }
-                />
-              ))}
-            </AnimatePresence>
-          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filtered.map((p) => (
+              <PresentationCard
+                key={p.slug}
+                presentation={p}
+                isCurrentWeek={
+                  p.weekNumber === currentWeek.weekNumber &&
+                  p.year === currentWeek.year
+                }
+              />
+            ))}
+          </div>
         )}
       </div>
     </main>

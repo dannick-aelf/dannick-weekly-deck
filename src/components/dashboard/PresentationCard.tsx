@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { motion } from "framer-motion";
 import { PlayIcon } from "@heroicons/react/24/solid";
 import {
   RectangleStackIcon,
@@ -33,21 +31,16 @@ export function PresentationCard({
   const statusLabel = complete ? "Complete" : "Draft";
 
   return (
-    <Link
+    <a
       href={`/present/${presentation.slug}/`}
-      className="block"
-      prefetch
+      className={`
+        block relative group cursor-pointer rounded-2xl overflow-hidden
+        bg-surface-raised border transition-all duration-200
+        ${isCurrentWeek ? "border-neon-cyan/40" : "border-wire-subtle"}
+        hover:border-wire-emphasis hover:-translate-y-0.5
+        active:scale-[0.97] active:opacity-80
+      `}
     >
-      <motion.div
-        layoutId={presentation.slug}
-        className={`
-          relative group cursor-pointer rounded-2xl overflow-hidden
-          bg-surface-raised border transition-all duration-200
-          ${isCurrentWeek ? "border-neon-cyan/40" : "border-wire-subtle"}
-          hover:border-wire-emphasis hover:-translate-y-0.5
-          active:scale-[0.97] active:opacity-80
-        `}
-      >
       {/* Thumbnail preview area */}
       <div className="relative h-28 bg-surface-base overflow-hidden">
         <div
@@ -128,7 +121,6 @@ export function PresentationCard({
           </button>
         </div>
       </div>
-    </motion.div>
-    </Link>
+    </a>
   );
 }
