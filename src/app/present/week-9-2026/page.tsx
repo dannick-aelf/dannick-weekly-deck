@@ -148,6 +148,53 @@ const slides = [
     />
   </BentoSlide>,
 
+  // 5b — SoulGarden Soft Launch
+  <BentoSlide key="soulgarden-launch" title="First Bloom: Soft Launch" label="SoulGarden">
+    <BentoCard
+      icon={<RocketLaunchIcon className="w-5 h-5" />}
+      title="The Soft Launch Party"
+      accent
+      image="/images/soulgarden-softlaunch.png"
+      description={
+        <>
+          Hosting an intimate launch event — <Accent>First Bloom</Accent>,
+          a fresh look into AI Manifestation, March 12 at MBFC
+        </>
+      }
+    />
+    <BentoCard
+      icon={<UserGroupIcon className="w-5 h-5" />}
+      title="6–8 Live Testers"
+      description={
+        <>
+          Handpicking a small group of <Bold>real users</Bold> who will
+          put SoulGarden 2.0 through its paces and give us raw feedback
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="Organic Hype"
+      description={
+        <>
+          These aren&rsquo;t just testers — they become our first{" "}
+          <Accent>advocates</Accent>, sharing their experience and
+          creating buzz from the ground up
+        </>
+      }
+    />
+    <BentoCard
+      icon={<LightBulbIcon className="w-5 h-5" />}
+      title="Why Small & Intimate"
+      description={
+        <>
+          A tight group means <Bold>deep conversations</Bold>, quality
+          feedback, and a community that feels ownership over the product
+        </>
+      }
+    />
+  </BentoSlide>,
+
   // 6 — MarcAI: The Product
   <BentoSlide key="marcai-1" title="Introducing MarcAI" label="MarcAI">
     <BentoCard
