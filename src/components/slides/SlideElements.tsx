@@ -288,6 +288,56 @@ export function VideoSlide({
   );
 }
 
+/* ─── Image Slide (large hero image, talking points bottom) ─── */
+
+export function ImageSlide({
+  title,
+  label,
+  image,
+  alt,
+  children,
+}: {
+  title: string;
+  label?: string;
+  image: string;
+  alt?: string;
+  children: ReactNode;
+}) {
+  return (
+    <motion.div
+      className="flex flex-col justify-center w-full min-h-full px-6 sm:px-12 md:px-20 py-12 max-w-6xl mx-auto"
+      variants={stagger}
+      initial="hidden"
+      animate="show"
+    >
+      <div className="mb-6">
+        {label && (
+          <motion.span
+            variants={fadeUp}
+            className="text-neon-cyan text-xs font-medium tracking-[0.2em] uppercase block mb-2"
+          >
+            {label}
+          </motion.span>
+        )}
+        <motion.h2
+          variants={fadeUp}
+          className="text-3xl sm:text-4xl font-bold text-text-primary tracking-tight"
+        >
+          {title}
+        </motion.h2>
+      </div>
+
+      <motion.div variants={scaleIn} className="w-full rounded-2xl border border-wire-subtle overflow-hidden bg-surface-base mb-6">
+        <img src={image} alt={alt || title} className="w-full h-auto" />
+      </motion.div>
+
+      <motion.div variants={stagger} className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+        {children}
+      </motion.div>
+    </motion.div>
+  );
+}
+
 /* ─── Split Slide (two-column: content left, image right) ─── */
 
 export function SplitSlide({

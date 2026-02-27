@@ -7,6 +7,7 @@ import {
   BentoSlide,
   BentoCard,
   SplitSlide,
+  ImageSlide,
   VideoSlide,
   QuoteSlide,
   Bold,
@@ -156,11 +157,11 @@ const slides = [
   </BentoSlide>,
 
   // 5b — SoulGarden Soft Launch
-  <SplitSlide
+  <ImageSlide
     key="soulgarden-launch"
     title="First Bloom: Soft Launch"
     label="SoulGarden"
-    image="/images/soulgarden-softlaunch.png"
+    image="/images/soulgarden-firstbloom.png"
   >
     <BentoCard
       icon={<RocketLaunchIcon className="w-5 h-5" />}
@@ -193,7 +194,7 @@ const slides = [
         </>
       }
     />
-  </SplitSlide>,
+  </ImageSlide>,
 
   // 6 — MarcAI: The Product
   <BentoSlide key="marcai-1" title="Introducing MarcAI" label="MarcAI">
