@@ -161,6 +161,7 @@ export function BentoCard({
   span = 1,
   accent = false,
   image,
+  video,
 }: {
   icon: ReactNode;
   title?: string;
@@ -168,6 +169,7 @@ export function BentoCard({
   span?: 1 | 2;
   accent?: boolean;
   image?: string;
+  video?: string;
 }) {
   return (
     <motion.div
@@ -182,7 +184,19 @@ export function BentoCard({
         }
       `}
     >
-      {image && (
+      {video && (
+        <div className="w-full">
+          <video
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto"
+          />
+        </div>
+      )}
+      {image && !video && (
         <div className="w-full">
           <img
             src={image}

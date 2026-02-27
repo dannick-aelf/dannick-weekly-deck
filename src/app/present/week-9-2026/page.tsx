@@ -223,6 +223,7 @@ const slides = [
       icon={<VideoCameraIcon className="w-5 h-5" />}
       title="Teaser Ready"
       accent
+      video="/images/marcai-teaser.mp4"
       description={
         <>
           First build is done, and we have a <Accent>teaser video</Accent>{" "}
