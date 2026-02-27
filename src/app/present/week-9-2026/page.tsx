@@ -28,6 +28,9 @@ import {
   ArrowPathIcon,
   WrenchScrewdriverIcon,
   ChartBarIcon,
+  CodeBracketIcon,
+  BeakerIcon,
+  PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 
 const slides = [
@@ -304,8 +307,8 @@ const slides = [
     number="02"
   />,
 
-  // 8 — Next Week
-  <BentoSlide key="next-week" title="The Plan" label="Next Week">
+  // 8 — Next Week (1)
+  <BentoSlide key="next-week-1" title="The Plan" label="Next Week">
     <BentoCard
       icon={<ChartBarIcon className="w-5 h-5" />}
       title="PRCA Day"
@@ -314,6 +317,61 @@ const slides = [
         <>
           Present the MarcAI teaser, collect real feedback, and{" "}
           <Accent>lock in early users</Accent>
+        </>
+      }
+    />
+    <BentoCard
+      icon={<MegaphoneIcon className="w-5 h-5" />}
+      title="Plan the Hackathon"
+      description={
+        <>
+          Sit down with the <Bold>marketing team</Bold> to plan the upcoming
+          hackathon event — logistics, format, and promotion
+        </>
+      }
+    />
+    <BentoCard
+      icon={<DevicePhoneMobileIcon className="w-5 h-5" />}
+      title="SoulGarden v2.0 Improvements"
+      description={
+        <>
+          Continue refining the <Accent>2.0 experience</Accent> — polish
+          interactions, squash bugs, prep for soft launch
+        </>
+      }
+    />
+    <BentoCard
+      icon={<WrenchScrewdriverIcon className="w-5 h-5" />}
+      title="Riteset v1.20 Improvements"
+      description={
+        <>
+          Ship updates for <Bold>Riteset v1.20</Bold> — tighten up the
+          product for the next release
+        </>
+      }
+    />
+  </BentoSlide>,
+
+  // 8b — Next Week (2)
+  <BentoSlide key="next-week-2" title="Building the Engine" label="Next Week">
+    <BentoCard
+      icon={<BeakerIcon className="w-5 h-5" />}
+      title="Test & Implement Skills for MarcAI"
+      accent
+      description={
+        <>
+          Identify and stress-test <Accent>skills</Accent> that plug
+          directly into the MarcAI SaaS — making the agents smarter
+        </>
+      }
+    />
+    <BentoCard
+      icon={<PuzzlePieceIcon className="w-5 h-5" />}
+      title="Configure MarcAI Agents"
+      description={
+        <>
+          Wire up and <Bold>configure the 4 agents</Bold> — define roles,
+          handoffs, and the full content generation pipeline
         </>
       }
     />
@@ -327,21 +385,12 @@ const slides = [
       }
     />
     <BentoCard
-      icon={<MegaphoneIcon className="w-5 h-5" />}
-      title="SoulGarden Goes Live"
-      description={
-        <>
-          Push the <Bold>soft launch</Bold> forward with marketing
-        </>
-      }
-    />
-    <BentoCard
-      icon={<WrenchScrewdriverIcon className="w-5 h-5" />}
+      icon={<CodeBracketIcon className="w-5 h-5" />}
       title="Skills → Production"
       description={
         <>
-          Lock in the <Bold>brandkit skill</Bold> workflows — ready for real
-          use
+          Lock in the <Bold>brandkit skill</Bold> workflows — ready for
+          real use across products
         </>
       }
     />
