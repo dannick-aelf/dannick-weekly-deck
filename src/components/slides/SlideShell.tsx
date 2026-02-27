@@ -64,6 +64,9 @@ export function SlideShell({ slides, title }: SlideShellProps) {
       if (e.key === "Escape") {
         router.push("/");
       }
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        e.preventDefault();
+      }
       if (e.key === "f") {
         document.documentElement.requestFullscreen?.();
       }

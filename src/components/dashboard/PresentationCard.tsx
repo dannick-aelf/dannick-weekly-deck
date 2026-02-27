@@ -29,7 +29,7 @@ export function PresentationCard({
   const complete = isComplete(presentation.slug);
 
   const handleClick = () => {
-    router.push(`/present/${presentation.slug}`);
+    router.push(`/present/${presentation.slug}/`);
   };
 
   const handleToggleStatus = (e: React.MouseEvent) => {
@@ -78,21 +78,15 @@ export function PresentationCard({
         )}
 
         <div className="absolute top-3 right-3">
-          <button
-            onClick={handleToggleStatus}
-            className={`flex items-center gap-1 text-2xs px-2 py-0.5 rounded-md font-medium transition-colors duration-150 hover:scale-105 active:scale-95 ${
+          <span
+            className={`text-2xs px-2 py-0.5 rounded-md font-medium ${
               complete
                 ? "bg-neon-cyan/15 text-neon-cyan"
-                : "bg-white/5 text-text-muted hover:bg-white/10"
+                : "bg-white/5 text-text-muted"
             }`}
           >
-            {complete ? (
-              <CheckSolid className="w-3 h-3" />
-            ) : (
-              <CheckOutline className="w-3 h-3" />
-            )}
             {statusLabel}
-          </button>
+          </span>
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">
@@ -117,14 +111,26 @@ export function PresentationCard({
         </p>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1 text-2xs text-text-muted">
-              <RectangleStackIcon className="w-3.5 h-3.5" />
-              {presentation.slideCount} slides
-            </span>
-          </div>
+          <span className="flex items-center gap-1 text-2xs text-text-muted">
+            <RectangleStackIcon className="w-3.5 h-3.5" />
+            {presentation.slideCount} slides
+          </span>
 
-          <ChevronRightIcon className="w-3.5 h-3.5 text-text-muted opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
+          <button
+            onClick={handleToggleStatus}
+            className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-150 active:scale-95 ${
+              complete
+                ? "bg-neon-cyan/15 text-neon-cyan hover:bg-neon-cyan/25"
+                : "bg-white/5 text-text-muted hover:bg-white/10 hover:text-text-secondary"
+            }`}
+          >
+            {complete ? (
+              <CheckSolid className="w-4 h-4" />
+            ) : (
+              <CheckOutline className="w-4 h-4" />
+            )}
+            {complete ? "Done" : "Mark Done"}
+          </button>
         </div>
       </div>
     </motion.div>
