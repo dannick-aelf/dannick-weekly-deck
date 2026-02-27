@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -33,7 +33,6 @@ const slideVariants = {
 };
 
 export function SlideShell({ slides, title }: SlideShellProps) {
-  const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const [showControls, setShowControls] = useState(true);
@@ -62,10 +61,7 @@ export function SlideShell({ slides, title }: SlideShellProps) {
         prev();
       }
       if (e.key === "Escape") {
-        router.push("/");
-      }
-      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
-        e.preventDefault();
+        window.location.href = "/";
       }
       if (e.key === "f") {
         document.documentElement.requestFullscreen?.();
@@ -73,7 +69,7 @@ export function SlideShell({ slides, title }: SlideShellProps) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [next, prev, router]);
+  }, [next, prev]);
 
   useEffect(() => {
     let touchStartX = 0;
@@ -132,13 +128,13 @@ export function SlideShell({ slides, title }: SlideShellProps) {
         animate={{ opacity: showControls ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        <button
-          onClick={() => router.push("/")}
+        <Link
+          href="/"
           className="pointer-events-auto flex items-center gap-2 text-text-muted hover:text-text-primary transition-colors text-sm"
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span className="hidden sm:inline">{title || "Back"}</span>
-        </button>
+        </Link>
         <span className="pointer-events-auto text-text-muted text-sm font-mono">
           {current + 1} / {total}
         </span>

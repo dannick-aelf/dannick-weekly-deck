@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { PlayIcon } from "@heroicons/react/24/solid";
 import {
   RectangleStackIcon,
-  ChevronRightIcon,
   CheckCircleIcon as CheckOutline,
 } from "@heroicons/react/24/outline";
 import { CheckCircleIcon as CheckSolid } from "@heroicons/react/24/solid";
@@ -23,16 +21,11 @@ export function PresentationCard({
   presentation,
   isCurrentWeek = false,
 }: PresentationCardProps) {
-  const router = useRouter();
-  const [isPressed, setIsPressed] = useState(false);
   const { isComplete, toggleComplete } = useDeckStore();
   const complete = isComplete(presentation.slug);
 
-  const handleClick = () => {
-    router.push(`/present/${presentation.slug}/`);
-  };
-
   const handleToggleStatus = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
     toggleComplete(presentation.slug);
   };
@@ -40,19 +33,21 @@ export function PresentationCard({
   const statusLabel = complete ? "Complete" : "Draft";
 
   return (
-    <motion.div
-      layoutId={presentation.slug}
-      onClick={handleClick}
-      onTouchStart={() => setIsPressed(true)}
-      onTouchEnd={() => setIsPressed(false)}
-      onTouchCancel={() => setIsPressed(false)}
-      className={`
-        relative group cursor-pointer rounded-2xl overflow-hidden
-        bg-surface-raised border transition-all duration-200
-        ${isCurrentWeek ? "border-neon-cyan/40" : "border-wire-subtle"}
-        ${isPressed ? "scale-[0.97] opacity-80" : "hover:border-wire-emphasis hover:-translate-y-0.5"}
-      `}
+    <Link
+      href={`/present/${presentation.slug}/`}
+      className="block"
+      prefetch
     >
+      <motion.div
+        layoutId={presentation.slug}
+        className={`
+          relative group cursor-pointer rounded-2xl overflow-hidden
+          bg-surface-raised border transition-all duration-200
+          ${isCurrentWeek ? "border-neon-cyan/40" : "border-wire-subtle"}
+          hover:border-wire-emphasis hover:-translate-y-0.5
+          active:scale-[0.97] active:opacity-80
+        `}
+      >
       {/* Thumbnail preview area */}
       <div className="relative h-28 bg-surface-base overflow-hidden">
         <div
@@ -134,5 +129,6 @@ export function PresentationCard({
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 }
