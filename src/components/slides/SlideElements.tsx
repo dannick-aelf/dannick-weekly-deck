@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useRef, useState, useCallback } from "react";
+import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -72,7 +72,7 @@ export function SectionSlide({
   number,
 }: {
   label?: string;
-  title: string;
+  title: ReactNode;
   number?: string;
 }) {
   return (
@@ -247,29 +247,6 @@ export function VideoSlide({
   poster?: string;
   children: ReactNode;
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
-
-  const togglePlay = useCallback(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play();
-      setPlaying(true);
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
-  }, []);
-
-  const toggleMute = useCallback(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-  }, []);
-
   return (
     <motion.div
       className="flex flex-col justify-center w-full min-h-full px-6 sm:px-12 md:px-20 py-12 max-w-6xl mx-auto"
@@ -294,47 +271,14 @@ export function VideoSlide({
         </motion.h2>
       </div>
 
-      <motion.div variants={scaleIn} className="relative rounded-2xl border border-wire-subtle overflow-hidden bg-black mb-6">
+      <motion.div variants={scaleIn} className="w-full aspect-video rounded-2xl border border-wire-subtle overflow-hidden bg-black mb-6">
         <video
-          ref={videoRef}
           src={video}
           poster={poster}
-          muted={muted}
+          controls
           playsInline
-          className="w-full h-auto max-h-[55vh] object-contain mx-auto"
-          onClick={togglePlay}
+          className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-0 inset-x-0 flex items-center gap-3 px-4 py-3 bg-gradient-to-t from-black/80 to-transparent">
-          <button
-            onClick={togglePlay}
-            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-          >
-            {playing ? (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <path fillRule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-1.5 0V6a.75.75 0 0 1 .75-.75Zm10.5 0a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-1.5 0V6a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 ml-0.5">
-                <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clipRule="evenodd" />
-              </svg>
-            )}
-          </button>
-          <button
-            onClick={toggleMute}
-            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-          >
-            {muted ? (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM17.78 9.22a.75.75 0 1 0-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 1 0 1.06-1.06L20.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-1.72 1.72-1.72-1.72Z" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z" />
-                <path d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z" />
-              </svg>
-            )}
-          </button>
-        </div>
       </motion.div>
 
       <motion.div variants={stagger} className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -403,6 +347,14 @@ export function Bold({ children }: { children: ReactNode }) {
 
 export function Accent({ children }: { children: ReactNode }) {
   return <span className="text-neon-cyan font-semibold">{children}</span>;
+}
+
+export function Keyword({ children }: { children: ReactNode }) {
+  return (
+    <span className="text-neon-cyan italic font-light" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+      {children}
+    </span>
+  );
 }
 
 /* ─── Quote Slide ─── */

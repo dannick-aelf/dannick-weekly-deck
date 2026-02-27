@@ -11,6 +11,7 @@ import {
   QuoteSlide,
   Bold,
   Accent,
+  Keyword,
 } from "@/components/slides/SlideElements";
 import {
   AcademicCapIcon,
@@ -47,7 +48,7 @@ const slides = [
   <SectionSlide
     key="section-this-week"
     label="The Highlights"
-    title="Four Things That Moved the Needle"
+    title={<><Keyword>Four</Keyword> Things That Moved the Needle</>}
     number="01"
   />,
 
@@ -136,8 +137,8 @@ const slides = [
       title="Poster Designed"
       description={
         <>
-          Created a <Bold>launch poster</Bold> — first piece of collateral for
-          the event
+          Created a <Bold>launch poster</Bold> — the event will be posted
+          on <Accent>Luma</Accent> and via personal invitation
         </>
       }
     />
@@ -303,7 +304,7 @@ const slides = [
   <SectionSlide
     key="section-next-week"
     label="Looking Ahead"
-    title="What's on Deck"
+    title={<>What's on <Keyword>Deck</Keyword></>}
     number="02"
   />,
 
@@ -367,11 +368,11 @@ const slides = [
     />
     <BentoCard
       icon={<PuzzlePieceIcon className="w-5 h-5" />}
-      title="Configure MarcAI Agents"
+      title="Lock Down the MarcAI Flow"
       description={
         <>
-          Wire up and <Bold>configure the 4 agents</Bold> — define roles,
-          handoffs, and the full content generation pipeline
+          Use <Bold>PRCA feedback</Bold> to finalize the agent flow —
+          nail the user journey and content generation pipeline
         </>
       }
     />
