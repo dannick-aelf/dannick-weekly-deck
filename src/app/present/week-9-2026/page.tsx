@@ -7,6 +7,7 @@ import {
   BentoSlide,
   BentoCard,
   SplitSlide,
+  VideoSlide,
   QuoteSlide,
   Bold,
   Accent,
@@ -222,12 +223,11 @@ const slides = [
   </BentoSlide>,
 
   // 7 — MarcAI: Next Steps
-  <BentoSlide key="marcai-2" title="What's Next for MarcAI" label="MarcAI">
+  <VideoSlide key="marcai-2" title="MarcAI Teaser" label="MarcAI" video="/images/marcai-teaser.mp4">
     <BentoCard
       icon={<VideoCameraIcon className="w-5 h-5" />}
       title="Teaser Ready"
       accent
-      video="/images/marcai-teaser.mp4"
       description={
         <>
           First build is done, and we have a <Accent>teaser video</Accent>{" "}
@@ -245,7 +245,7 @@ const slides = [
         </>
       }
     />
-  </BentoSlide>,
+  </VideoSlide>,
 
   // 6 — PRCA
   <BentoSlide
@@ -315,8 +315,8 @@ const slides = [
       accent
       description={
         <>
-          Present the MarcAI teaser, collect real feedback, and{" "}
-          <Accent>lock in early users</Accent>
+          Present the MarcAI teaser, collect real feedback,{" "}
+          <Accent>lock in early users</Accent>, and get investors
         </>
       }
     />
