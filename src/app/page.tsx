@@ -36,10 +36,10 @@ export default function DashboardPage() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-text-primary lg:hidden">
-            ChronoAI Weekly
+            My Decks
           </h1>
           <h1 className="text-2xl font-bold text-text-primary hidden lg:block">
-            Dashboard
+            My Decks
           </h1>
           <p className="text-sm text-text-muted mt-1">
             {formatWeekLabel(currentWeek.weekNumber, currentWeek.year)}

@@ -2,19 +2,16 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import {
-  HomeIcon as HomeOutline,
-  Cog6ToothIcon as CogOutline,
+  RectangleStackIcon as DeckOutline,
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import {
-  HomeIcon as HomeSolid,
-  Cog6ToothIcon as CogSolid,
+  RectangleStackIcon as DeckSolid,
 } from "@heroicons/react/24/solid";
 import { getCurrentWeek, formatDateRange } from "@/lib/utils/week";
 
 const NAV_ITEMS = [
-  { id: "dashboard", path: "/", label: "Dashboard", outline: HomeOutline, solid: HomeSolid },
-  { id: "settings", path: "/settings", label: "Settings", outline: CogOutline, solid: CogSolid },
+  { id: "dashboard", path: "/", label: "My Decks", outline: DeckOutline, solid: DeckSolid },
 ] as const;
 
 export function Sidebar() {
@@ -25,7 +22,7 @@ export function Sidebar() {
   const isEditing = pathname.startsWith("/editor/");
   if (isPresenting || isEditing) return null;
 
-  const activeId = pathname === "/" ? "dashboard" : pathname === "/settings" ? "settings" : "";
+  const activeId = pathname === "/" ? "dashboard" : "";
   const week = getCurrentWeek();
 
   return (
@@ -34,10 +31,10 @@ export function Sidebar() {
       <div className="px-6 pt-8 pb-8">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center">
-            <span className="text-neon-cyan font-bold text-sm">C</span>
+            <span className="text-neon-cyan font-bold text-sm">D</span>
           </div>
           <div>
-            <h1 className="text-base font-bold text-text-primary leading-tight">ChronoAI</h1>
+            <h1 className="text-base font-bold text-text-primary leading-tight">Dannick</h1>
             <p className="text-2xs text-text-muted">Weekly Presentations</p>
           </div>
         </div>

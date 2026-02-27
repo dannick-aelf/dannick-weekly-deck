@@ -3,18 +3,15 @@
 import { useCallback } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import {
-  HomeIcon as HomeOutline,
-  Cog6ToothIcon as CogOutline,
+  RectangleStackIcon as DeckOutline,
 } from "@heroicons/react/24/outline";
 import {
-  HomeIcon as HomeSolid,
-  Cog6ToothIcon as CogSolid,
+  RectangleStackIcon as DeckSolid,
 } from "@heroicons/react/24/solid";
 import { useNavStore } from "@/lib/store/nav-store";
 
 const TABS = [
-  { id: "dashboard", path: "/", label: "Home", outline: HomeOutline, solid: HomeSolid },
-  { id: "settings", path: "/settings", label: "Settings", outline: CogOutline, solid: CogSolid },
+  { id: "dashboard", path: "/", label: "My Decks", outline: DeckOutline, solid: DeckSolid },
 ] as const;
 
 export function BottomNav() {
@@ -28,7 +25,6 @@ export function BottomNav() {
 
   const getActiveTab = () => {
     if (pathname === "/") return "dashboard";
-    if (pathname === "/settings") return "settings";
     return "";
   };
 
