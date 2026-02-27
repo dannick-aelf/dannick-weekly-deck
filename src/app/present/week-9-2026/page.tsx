@@ -115,7 +115,7 @@ const slides = [
     key="soulgarden"
     title="Growing SoulGarden"
     label="SoulGarden"
-    image="/images/soulgarden-firstbloom.png"
+    image="/images/soulgarden-firstbloom.jpg"
   >
     <BentoCard
       icon={<DevicePhoneMobileIcon className="w-5 h-5" />}
@@ -155,7 +155,7 @@ const slides = [
     key="soulgarden-launch"
     title="First Bloom: Soft Launch"
     label="SoulGarden"
-    image="/images/soulgarden-softlaunch.png"
+    image="/images/soulgarden-softlaunch.jpg"
   >
     <BentoCard
       icon={<RocketLaunchIcon className="w-5 h-5" />}
