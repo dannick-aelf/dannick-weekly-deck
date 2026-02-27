@@ -110,8 +110,13 @@ const slides = [
     />
   </BentoSlide>,
 
-  // 4 — SoulGarden
-  <BentoSlide key="soulgarden" title="Growing SoulGarden" label="SoulGarden">
+  // 5 — SoulGarden Launch Prep
+  <ImageSlide
+    key="soulgarden"
+    title="Growing SoulGarden"
+    label="SoulGarden"
+    image="/images/soulgarden-firstbloom.png"
+  >
     <BentoCard
       icon={<DevicePhoneMobileIcon className="w-5 h-5" />}
       title="2.0 Getting Polished"
@@ -134,16 +139,6 @@ const slides = [
       }
     />
     <BentoCard
-      icon={<PhotoIcon className="w-5 h-5" />}
-      title="Poster Designed"
-      description={
-        <>
-          Created a <Bold>launch poster</Bold> — the event will be posted
-          on <Accent>Luma</Accent> and via personal invitation
-        </>
-      }
-    />
-    <BentoCard
       icon={<BoltIcon className="w-5 h-5" />}
       title="The Vision: Auto-Generated Assets"
       description={
@@ -153,14 +148,14 @@ const slides = [
         </>
       }
     />
-  </BentoSlide>,
+  </ImageSlide>,
 
-  // 5b — SoulGarden Soft Launch
-  <ImageSlide
+  // 6 — SoulGarden Soft Launch
+  <SplitSlide
     key="soulgarden-launch"
     title="First Bloom: Soft Launch"
     label="SoulGarden"
-    image="/images/soulgarden-firstbloom.png"
+    image="/images/soulgarden-softlaunch.png"
   >
     <BentoCard
       icon={<RocketLaunchIcon className="w-5 h-5" />}
@@ -193,7 +188,7 @@ const slides = [
         </>
       }
     />
-  </ImageSlide>,
+  </SplitSlide>,
 
   // 6 — MarcAI: The Product
   <BentoSlide key="marcai-1" title="Introducing MarcAI" label="MarcAI">
