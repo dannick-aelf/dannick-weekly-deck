@@ -27,7 +27,7 @@ export function TitleSlide({
   subtitle,
   accent,
 }: {
-  title: string;
+  title: ReactNode;
   subtitle?: string;
   accent?: string;
 }) {

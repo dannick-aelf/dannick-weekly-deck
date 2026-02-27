@@ -41,7 +41,7 @@ const slides = [
   <TitleSlide
     key="cover"
     accent="Week 9 · Feb 23 – Mar 1, 2026"
-    title="This Week in Motion"
+    title={<>This Week in <Keyword>Motion</Keyword></>}
     subtitle="Shipping products, shaping brands, chasing ideas"
   />,
 
