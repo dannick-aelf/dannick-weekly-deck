@@ -5,12 +5,14 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { PlayIcon } from "@heroicons/react/24/solid";
 import {
-  ClockIcon,
   RectangleStackIcon,
   ChevronRightIcon,
+  CheckCircleIcon as CheckOutline,
 } from "@heroicons/react/24/outline";
+import { CheckCircleIcon as CheckSolid } from "@heroicons/react/24/solid";
 import { formatDateRange } from "@/lib/utils/week";
 import type { PresentationEntry } from "@/lib/presentations/registry";
+import { useDeckStore } from "@/lib/store/deck-store";
 
 interface PresentationCardProps {
   presentation: PresentationEntry;
@@ -23,13 +25,19 @@ export function PresentationCard({
 }: PresentationCardProps) {
   const router = useRouter();
   const [isPressed, setIsPressed] = useState(false);
+  const { isComplete, toggleComplete } = useDeckStore();
+  const complete = isComplete(presentation.slug);
 
   const handleClick = () => {
     router.push(`/present/${presentation.slug}`);
   };
 
-  const statusLabel =
-    presentation.status === "complete" ? "Complete" : "Draft";
+  const handleToggleStatus = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleComplete(presentation.slug);
+  };
+
+  const statusLabel = complete ? "Complete" : "Draft";
 
   return (
     <motion.div
@@ -70,15 +78,21 @@ export function PresentationCard({
         )}
 
         <div className="absolute top-3 right-3">
-          <span
-            className={`text-2xs px-2 py-0.5 rounded-md font-medium ${
-              presentation.status === "complete"
+          <button
+            onClick={handleToggleStatus}
+            className={`flex items-center gap-1 text-2xs px-2 py-0.5 rounded-md font-medium transition-colors duration-150 hover:scale-105 active:scale-95 ${
+              complete
                 ? "bg-neon-cyan/15 text-neon-cyan"
-                : "bg-white/5 text-text-muted"
+                : "bg-white/5 text-text-muted hover:bg-white/10"
             }`}
           >
+            {complete ? (
+              <CheckSolid className="w-3 h-3" />
+            ) : (
+              <CheckOutline className="w-3 h-3" />
+            )}
             {statusLabel}
-          </span>
+          </button>
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40">

@@ -12,6 +12,7 @@ import { presentations } from "@/lib/presentations/registry";
 import { getCurrentWeek, formatWeekLabel } from "@/lib/utils/week";
 import { PresentationCard } from "@/components/dashboard/PresentationCard";
 import { SearchBar } from "@/components/dashboard/SearchBar";
+import { useDeckStore } from "@/lib/store/deck-store";
 
 export default function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,8 +28,9 @@ export default function DashboardPage() {
     );
   }, [searchQuery]);
 
+  const { completedSlugs } = useDeckStore();
   const totalDecks = presentations.length;
-  const completeDecks = presentations.filter((p) => p.status === "complete").length;
+  const completeDecks = presentations.filter((p) => completedSlugs.includes(p.slug)).length;
   const totalSlides = presentations.reduce((sum, p) => sum + p.slideCount, 0);
 
   return (
