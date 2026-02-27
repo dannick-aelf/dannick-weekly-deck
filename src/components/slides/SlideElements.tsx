@@ -238,11 +238,13 @@ export function VideoSlide({
   title,
   label,
   video,
+  poster,
   children,
 }: {
   title: string;
   label?: string;
   video: string;
+  poster?: string;
   children: ReactNode;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -296,6 +298,7 @@ export function VideoSlide({
         <video
           ref={videoRef}
           src={video}
+          poster={poster}
           muted={muted}
           playsInline
           className="w-full h-auto max-h-[55vh] object-contain mx-auto"

@@ -223,7 +223,7 @@ const slides = [
   </BentoSlide>,
 
   // 7 — MarcAI: Next Steps
-  <VideoSlide key="marcai-2" title="MarcAI Teaser" label="MarcAI" video="/images/marcai-teaser.mp4">
+  <VideoSlide key="marcai-2" title="MarcAI Teaser" label="MarcAI" video="/images/marcai-teaser.mp4" poster="/images/marcai-teaser-thumb.jpg">
     <BentoCard
       icon={<VideoCameraIcon className="w-5 h-5" />}
       title="Teaser Ready"
