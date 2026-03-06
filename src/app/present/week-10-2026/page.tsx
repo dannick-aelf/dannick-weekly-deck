@@ -247,6 +247,7 @@ const slides = [
     key="soulgarden-visuals"
     title="New Visual Direction"
     label="SoulGarden 2.0"
+    heroVideo="/images/sg2-visual-subtle.mp4"
     videos={[
       "/images/sg2-manifest.mp4",
       "/images/sg2-your.mp4",
@@ -256,7 +257,6 @@ const slides = [
       "/images/sg2-reality-4.mp4",
       "/images/sg2-reality-5.mp4",
       "/images/sg2-reality-6.mp4",
-      "/images/sg2-visual-subtle.mp4",
       "/images/sg2-visual-still.mp4",
     ]}
   />,

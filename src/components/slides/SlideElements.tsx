@@ -419,27 +419,29 @@ export function AccentWarm({ children }: { children: ReactNode }) {
   return <span className="text-neon-orange font-semibold">{children}</span>;
 }
 
-/* ─── Video Grid Slide (many videos in a grid, 1:1 clipped) ─── */
+/* ─── Video Grid Slide (hero 16:9 + grid of 1:1 videos) ─── */
 
 export function VideoGridSlide({
   title,
   label,
+  heroVideo,
   videos,
 }: {
   title: string;
   label?: string;
+  heroVideo?: string;
   videos: string[];
 }) {
-  const cols = videos.length <= 4 ? 2 : videos.length <= 6 ? 3 : videos.length <= 9 ? 3 : 5;
+  const cols = videos.length <= 4 ? 2 : videos.length <= 6 ? 3 : 3;
 
   return (
     <motion.div
-      className="flex flex-col justify-center w-full min-h-full px-6 sm:px-12 md:px-20 py-12 max-w-6xl mx-auto"
+      className="flex flex-col justify-center w-full min-h-full px-6 sm:px-12 md:px-20 py-10 max-w-6xl mx-auto"
       variants={stagger}
       initial="hidden"
       animate="show"
     >
-      <div className="mb-6">
+      <div className="mb-5">
         {label && (
           <motion.span
             variants={fadeUp}
@@ -455,6 +457,22 @@ export function VideoGridSlide({
           {title}
         </motion.h2>
       </div>
+
+      {heroVideo && (
+        <motion.div
+          variants={scaleIn}
+          className="relative w-full aspect-video rounded-2xl overflow-hidden border border-wire-subtle bg-black mb-4"
+        >
+          <video
+            src={heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </motion.div>
+      )}
 
       <motion.div
         variants={stagger}
