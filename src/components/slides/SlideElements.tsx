@@ -114,10 +114,12 @@ export function BentoSlide({
   title,
   label,
   children,
+  cols,
 }: {
   title: string;
   label?: string;
   children: ReactNode;
+  cols?: number;
 }) {
   return (
     <motion.div
@@ -144,7 +146,8 @@ export function BentoSlide({
       </div>
       <motion.div
         variants={stagger}
-        className="grid grid-cols-2 gap-3 sm:gap-4"
+        className="grid gap-3 sm:gap-4"
+        style={{ gridTemplateColumns: `repeat(${cols || 2}, 1fr)` }}
       >
         {children}
       </motion.div>
@@ -162,14 +165,16 @@ export function BentoCard({
   accent = false,
   image,
   video,
+  compactImage = false,
 }: {
   icon: ReactNode;
-  title?: string;
+  title?: ReactNode;
   description: ReactNode;
   span?: 1 | 2;
   accent?: boolean;
   image?: string;
   video?: string;
+  compactImage?: boolean;
 }) {
   return (
     <motion.div
@@ -197,11 +202,11 @@ export function BentoCard({
         </div>
       )}
       {image && !video && (
-        <div className="w-full">
+        <div className={`w-full ${compactImage ? "max-h-36 overflow-hidden" : ""}`}>
           <img
             src={image}
-            alt={title || ""}
-            className="w-full h-auto"
+            alt={typeof title === "string" ? title : ""}
+            className={compactImage ? "w-full h-full object-cover" : "w-full h-auto"}
           />
         </div>
       )}
@@ -531,6 +536,73 @@ export function QuoteSlide({
       {attribution && (
         <motion.p variants={fadeUp} className="text-text-muted text-base mt-8">
           — {attribution}
+        </motion.p>
+      )}
+    </motion.div>
+  );
+}
+
+/* ─── Logo Wall Slide ─── */
+
+export function LogoWallSlide({
+  title,
+  label,
+  logos,
+  footnote,
+}: {
+  title: string;
+  label?: string;
+  logos: { src: string; alt: string; dark?: boolean }[];
+  footnote?: ReactNode;
+}) {
+  const cols = logos.length <= 4 ? 2 : logos.length <= 6 ? 3 : 4;
+
+  return (
+    <motion.div
+      className="flex flex-col items-center justify-center w-full h-full px-6 sm:px-10"
+      variants={stagger}
+      initial="hidden"
+      animate="show"
+    >
+      {label && (
+        <motion.span
+          variants={fadeUp}
+          className="text-neon-cyan text-xs font-medium tracking-[0.2em] uppercase mb-4"
+        >
+          {label}
+        </motion.span>
+      )}
+      <motion.h2
+        variants={fadeUp}
+        className="text-2xl sm:text-3xl font-bold text-text-primary mb-8 text-center"
+      >
+        {title}
+      </motion.h2>
+      <motion.div
+        variants={stagger}
+        className="grid gap-4 sm:gap-5 w-full max-w-3xl"
+        style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+      >
+        {logos.map((logo, i) => (
+          <motion.div
+            key={i}
+            variants={scaleIn}
+            className={`flex items-center justify-center border border-wire-subtle rounded-2xl p-5 aspect-[3/2] ${logo.dark ? "bg-black" : "bg-white"}`}
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="max-w-full max-h-full object-contain"
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+      {footnote && (
+        <motion.p
+          variants={fadeUp}
+          className="text-text-muted text-sm mt-6 text-center"
+        >
+          {footnote}
         </motion.p>
       )}
     </motion.div>

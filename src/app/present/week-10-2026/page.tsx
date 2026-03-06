@@ -7,6 +7,7 @@ import {
   BentoSlide,
   BentoCard,
   VideoGridSlide,
+  LogoWallSlide,
   QuoteSlide,
   Bold,
   Accent,
@@ -27,6 +28,9 @@ import {
   DevicePhoneMobileIcon,
   EyeIcon,
   FireIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  CheckBadgeIcon,
+  HandThumbUpIcon,
 } from "@heroicons/react/24/outline";
 
 const slides = [
@@ -50,20 +54,22 @@ const slides = [
   <BentoSlide key="prca-success" title="PRCA: The Moment Landed" label="PRCA Event">
     <BentoCard
       icon={<MegaphoneIcon className="w-5 h-5" />}
-      title="Presented to the Room"
+      title="Wendy on Stage"
       accent
       image="/images/prca-wendy-stage.png"
+      compactImage
       description={
         <>
-          Stood up at the <Accent>PRCA AI Conference</Accent> and
-          demoed MarcAI live — real reactions, real interest
+          Spoke on <Accent>AI automations, branding, and innovation</Accent> —
+          then showcased MarcAI to a room of agencies, brands, and tech companies
         </>
       }
     />
     <BentoCard
       icon={<ChartBarIcon className="w-5 h-5" />}
-      title="We Were There"
+      title="ChronoAI Was There"
       image="/images/prca-badge.png"
+      compactImage
       description={
         <>
           Dannick Young, <Bold>Head AI Design</Bold> — representing
@@ -73,74 +79,135 @@ const slides = [
     />
     <BentoCard
       icon={<UserGroupIcon className="w-5 h-5" />}
-      title="Wendy on the Panel"
+      title="The Panel"
       image="/images/prca-panel-w10.png"
+      compactImage
       description={
         <>
           <AccentWarm>2026: The Year of Being Human</AccentWarm> —
-          real conversations about AI&rsquo;s role in PR
+          real conversations about AI, branding, and innovation in PR
         </>
       }
     />
     <BentoCard
       icon={<FireIcon className="w-5 h-5" />}
-      title="Industry Stage"
+      title="Among the Big Names"
       image="/images/prca-sponsors.png"
+      compactImage
       description={
         <>
-          Among the biggest names in PR — <Bold>ChronoAI</Bold> showed
-          up as builders, not just talkers
+          A mix of PR agencies, brands, and tech companies in one room —
+          <Bold>ChronoAI</Bold> showed up as builders, not just talkers
         </>
       }
     />
   </BentoSlide>,
 
-  // 4 — MarcAI Market Positioning
-  <BentoSlide key="marcai-positioning" title="Where MarcAI Sits" label="Market Positioning">
+  // 4 — MarcAI at PRCA
+  <BentoSlide key="marcai-prca" title="MarcAI × PRCA" label="Product-Market Fit">
     <BentoCard
       icon={<RocketLaunchIcon className="w-5 h-5" />}
-      title="The Gap We're Filling"
+      title="We Promoted MarcAI"
       accent
+      image="/images/marcai-splash-w10.png"
       description={
         <>
-          PR teams still do content manually — <Accent>MarcAI automates</Accent> the
-          entire pipeline from brand intel to publish-ready output
+          Used PRCA as the stage to test <Accent>product-market fit</Accent> —
+          put MarcAI in front of real agencies and brands
         </>
       }
     />
     <BentoCard
       icon={<LightBulbIcon className="w-5 h-5" />}
-      title="Not Another Chatbot"
+      title="The Product Spoke"
+      image="/images/marcai-dashboard-w10.png"
       description={
         <>
-          Four specialized agents working in sequence — it&rsquo;s a{" "}
-          <Bold>system</Bold>, not a wrapper around an LLM
-        </>
-      }
-    />
-    <BentoCard
-      icon={<EyeIcon className="w-5 h-5" />}
-      title="What PRCA Showed Us"
-      description={
-        <>
-          The market doesn&rsquo;t need convincing that AI helps —
-          they need <AccentWarm>someone to build it right</AccentWarm>
+          Brand Videos, Visual Design, AI UGC — a full{" "}
+          <Bold>content engine</Bold> in one product
         </>
       }
     />
     <BentoCard
       icon={<ChartBarIcon className="w-5 h-5" />}
-      title="Next: Close the Loop"
+      title="Very Strong Response"
       description={
         <>
-          Take PRCA feedback, <Bold>iterate the agent flow</Bold>,
-          and get a working beta into early users&rsquo; hands
+          Not polite nods — <AccentWarm>genuine pull</AccentWarm>.
+          Companies asking when they can start, how to collaborate,
+          and whether it works for agencies
+        </>
+      }
+    />
+    <BentoCard
+      icon={<EyeIcon className="w-5 h-5" />}
+      title="8 Companies Want In"
+      description={
+        <>
+          From <Bold>ByteDance</Bold> to <Bold>Razer</Bold> — agencies, tech giants,
+          and sustainability leaders want to <AccentWarm>work with us</AccentWarm>
         </>
       }
     />
   </BentoSlide>,
 
-  // 5 — Section: Community
+  // 5 — The Questions & The Answer
+  <BentoSlide key="marcai-questions" title="What They Asked Us" label="MarcAI × PRCA">
+    <BentoCard
+      icon={<ChatBubbleOvalLeftEllipsisIcon className="w-5 h-5" />}
+      title={<>&ldquo;When can we start using MarcAI?&rdquo;</>}
+      accent
+      description={
+        <>The demand is <Accent>now</Accent> — not future interest, immediate intent</>
+      }
+    />
+    <BentoCard
+      icon={<ChatBubbleOvalLeftEllipsisIcon className="w-5 h-5" />}
+      title={<>&ldquo;Can we collaborate?&rdquo;</>}
+      description={
+        <>Agencies and brands wanting to <Bold>partner</Bold>, not just buy</>
+      }
+    />
+    <BentoCard
+      icon={<ChatBubbleOvalLeftEllipsisIcon className="w-5 h-5" />}
+      title={<>&ldquo;How long did you take to build this?&rdquo;</>}
+      description={
+        <>The speed shocked them — <AccentWarm>built fast, built right</AccentWarm></>
+      }
+    />
+    <BentoCard
+      icon={<ChatBubbleOvalLeftEllipsisIcon className="w-5 h-5" />}
+      title={<>&ldquo;Is this suitable for agencies?&rdquo;</>}
+      description={
+        <>
+          Proud to say — the answer to every single one of these is a{" "}
+          <Accent>big fat YES</Accent>
+        </>
+      }
+    />
+  </BentoSlide>,
+
+  // 6 — Logo Wall: Who Wants In
+  <LogoWallSlide
+    key="marcai-logos"
+    title="Who Wants In"
+    label="MarcAI × PRCA"
+    logos={[
+      { src: "/images/logo-bytedance.png", alt: "ByteDance" },
+      { src: "/images/logo-razer.png", alt: "Razer" },
+      { src: "/images/logo-comco.png", alt: "COMCO Southeast Asia" },
+      { src: "/images/logo-precious.png", alt: "PRecious Communications" },
+      { src: "/images/logo-horizon-quantum.png", alt: "Horizon Quantum" },
+      { src: "/images/logo-midaspr.png", alt: "Midas PR Group" },
+      { src: "/images/logo-climateUX.png", alt: "Climate UX", dark: true },
+      { src: "/images/logo-notified.png", alt: "Notified" },
+    ]}
+    footnote={
+      <>Companies that expressed interest to work with us or use MarcAI</>
+    }
+  />,
+
+  // 7 — Section: Community
   <SectionSlide
     key="section-community"
     label="A Deeper Truth"
@@ -152,22 +219,22 @@ const slides = [
   <BentoSlide key="community" title="Why Community Matters Now" label="Community">
     <BentoCard
       icon={<HeartIcon className="w-5 h-5" />}
-      title="The Loneliness of Building"
+      title="Tech Should Connect, Not Isolate"
       accent
       description={
         <>
-          Builders, creators, founders — we&rsquo;re all heads-down in our
-          own worlds. <Accent>Community breaks the isolation</Accent>
+          It&rsquo;s core to our mission — technology should bring people
+          together. <Accent>Community is not a feature, it&rsquo;s the foundation</Accent>
         </>
       }
     />
     <BentoCard
       icon={<ChatBubbleLeftRightIcon className="w-5 h-5" />}
-      title="Tech Needs Tribe"
+      title="People Don't Want Tools — They Want Belonging"
       description={
         <>
-          The best ideas don&rsquo;t come from solo sessions —
-          they come from <Bold>collisions</Bold> between people who care about the same things
+          PRCA proved it — the interest wasn&rsquo;t just about buying a product.
+          People want to <Bold>belong to something</Bold>
         </>
       }
     />
@@ -177,17 +244,17 @@ const slides = [
       description={
         <>
           Everyone&rsquo;s building with AI, few are building <AccentWarm>around</AccentWarm> it —
-          there&rsquo;s a huge gap for genuine, human-first AI communities
+          there&rsquo;s a huge gap for genuine, human-first communities
         </>
       }
     />
     <BentoCard
       icon={<SparklesIcon className="w-5 h-5" />}
-      title="First Bloom Is the Start"
+      title="SoulGarden Is the Proof"
       description={
         <>
-          SoulGarden&rsquo;s soft launch isn&rsquo;t just a product demo —
-          it&rsquo;s <Accent>seeding a community</Accent> of people who believe in something
+          Daily rituals that create shared habits. Users who feel they belong.
+          People who naturally <Accent>share and invite others</Accent> — that&rsquo;s community
         </>
       }
     />
@@ -219,7 +286,7 @@ const slides = [
       title="New Visual Direction"
       description={
         <>
-          Moving toward a <Bold>warmer, more organic</Bold> visual
+          Moving toward a <Bold>fun, playful</Bold> visual
           language — less tech, more soul
         </>
       }
@@ -229,18 +296,18 @@ const slides = [
       title="Brand Feels Different"
       description={
         <>
-          The <AccentWarm>First Bloom</AccentWarm> aesthetic is
+          The <AccentWarm>new</AccentWarm> aesthetic is
           setting the tone — playful, alive, grounded
         </>
       }
     />
     <BentoCard
       icon={<SparklesIcon className="w-5 h-5" />}
-      title="Ready for First Bloom"
+      title="UI/UX Improvements"
       description={
         <>
-          March 12 at MBFC — everything is converging toward
-          that <Accent>one moment</Accent>
+          Every screen refined to feel inline with the <Accent>new branding</Accent> —
+          scenic backgrounds, chrome icons, improved experience
         </>
       }
     />
@@ -265,7 +332,56 @@ const slides = [
     ]}
   />,
 
-  // 10 — Closing
+  // 10 — SoulGarden 2.0 UI Upgrades
+  <BentoSlide key="sg2-ui" title="The New Experience" label="SoulGarden 2.0 UI" cols={4}>
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="Seed Phase"
+      accent
+      image="/images/sg2-ui-seed.png"
+      description={
+        <>
+          <Accent>Scenic backgrounds</Accent> replace flat white —
+          every phase now feels alive and immersive
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="Sprout Phase"
+      image="/images/sg2-ui-sprout.png"
+      description={
+        <>
+          <Bold>Chrome icons</Bold> with metallic finish —
+          a premium, tactile feel across all growth stages
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="Growing Phase"
+      image="/images/sg2-ui-growing.png"
+      description={
+        <>
+          <AccentWarm>White background removed</AccentWarm> — the plant lives
+          inside its world now, not on top of a card
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="Fully Bloomed"
+      image="/images/sg2-ui-bloomed.png"
+      description={
+        <>
+          The full journey: Seed → Sprout → Growing → <Accent>Bloom</Accent>.
+          Every stage is a visual reward
+        </>
+      }
+    />
+  </BentoSlide>,
+
+  // 11 — Closing
   <QuoteSlide
     key="closing"
     quote="Build the product. Find your people. The rest follows."
