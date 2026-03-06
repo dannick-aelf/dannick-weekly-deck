@@ -419,6 +419,69 @@ export function AccentWarm({ children }: { children: ReactNode }) {
   return <span className="text-neon-orange font-semibold">{children}</span>;
 }
 
+/* ─── Video Grid Slide (many videos in a grid, 1:1 clipped) ─── */
+
+export function VideoGridSlide({
+  title,
+  label,
+  videos,
+}: {
+  title: string;
+  label?: string;
+  videos: string[];
+}) {
+  const cols = videos.length <= 4 ? 2 : videos.length <= 6 ? 3 : videos.length <= 9 ? 3 : 5;
+
+  return (
+    <motion.div
+      className="flex flex-col justify-center w-full min-h-full px-6 sm:px-12 md:px-20 py-12 max-w-6xl mx-auto"
+      variants={stagger}
+      initial="hidden"
+      animate="show"
+    >
+      <div className="mb-6">
+        {label && (
+          <motion.span
+            variants={fadeUp}
+            className="text-neon-cyan text-xs font-medium tracking-[0.2em] uppercase block mb-2"
+          >
+            {label}
+          </motion.span>
+        )}
+        <motion.h2
+          variants={fadeUp}
+          className="text-3xl sm:text-4xl font-bold text-text-primary tracking-tight"
+        >
+          {title}
+        </motion.h2>
+      </div>
+
+      <motion.div
+        variants={stagger}
+        className="grid gap-2 sm:gap-3"
+        style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+      >
+        {videos.map((src, i) => (
+          <motion.div
+            key={i}
+            variants={scaleIn}
+            className="relative aspect-square rounded-xl overflow-hidden border border-wire-subtle bg-black"
+          >
+            <video
+              src={src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+}
+
 /* ─── Quote Slide ─── */
 
 export function QuoteSlide({
