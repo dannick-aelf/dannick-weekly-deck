@@ -52,6 +52,7 @@ const slides = [
       icon={<MegaphoneIcon className="w-5 h-5" />}
       title="Presented to the Room"
       accent
+      image="/images/prca-wendy-stage.png"
       description={
         <>
           Stood up at the <Accent>PRCA AI Conference</Accent> and
@@ -61,31 +62,34 @@ const slides = [
     />
     <BentoCard
       icon={<ChartBarIcon className="w-5 h-5" />}
-      title="Market Validation"
+      title="We Were There"
+      image="/images/prca-badge.png"
       description={
         <>
-          The audience <Bold>leaned in</Bold> — content automation
-          in PR is a gap people feel but nobody&rsquo;s solved cleanly
+          Dannick Young, <Bold>Head AI Design</Bold> — representing
+          ChronoAI at One Farrer Hotel, Singapore
         </>
       }
     />
     <BentoCard
       icon={<UserGroupIcon className="w-5 h-5" />}
-      title="Sign-ups & Conversations"
+      title="Wendy on the Panel"
+      image="/images/prca-panel-w10.png"
       description={
         <>
-          Collected early interest and <AccentWarm>real conversations</AccentWarm> with
-          people who want to try MarcAI — not polite nods, genuine pull
+          <AccentWarm>2026: The Year of Being Human</AccentWarm> —
+          real conversations about AI&rsquo;s role in PR
         </>
       }
     />
     <BentoCard
       icon={<FireIcon className="w-5 h-5" />}
-      title="Wendy Crushed It"
+      title="Industry Stage"
+      image="/images/prca-sponsors.png"
       description={
         <>
-          Panel presence was strong — positioned <Bold>ChronoAI</Bold> as
-          builders, not just talkers
+          Among the biggest names in PR — <Bold>ChronoAI</Bold> showed
+          up as builders, not just talkers
         </>
       }
     />
