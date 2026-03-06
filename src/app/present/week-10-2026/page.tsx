@@ -28,6 +28,7 @@ import {
   DevicePhoneMobileIcon,
   EyeIcon,
   FireIcon,
+  FilmIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   CheckBadgeIcon,
   HandThumbUpIcon,
@@ -260,7 +261,54 @@ const slides = [
     />
   </BentoSlide>,
 
-  // 7 — Section: SoulGarden 2.0
+  // 7 — Community: The Opportunity
+  <BentoSlide key="community-opportunity" title="The Opportunity" label="Community">
+    <BentoCard
+      icon={<PaintBrushIcon className="w-5 h-5" />}
+      title="Creatives Need Community Too"
+      accent
+      description={
+        <>
+          Tech people have hackathons. Designers and creatives?{" "}
+          <Accent>Almost nothing</Accent>. There&rsquo;s no equivalent gathering
+          that brings creative minds together in the AI era
+        </>
+      }
+    />
+    <BentoCard
+      icon={<LightBulbIcon className="w-5 h-5" />}
+      title="AI Is Reshaping Creative Work"
+      description={
+        <>
+          Product designers and creatives are navigating a shift —
+          community helps them <Bold>learn, adapt, and stay relevant</Bold> together
+        </>
+      }
+    />
+    <BentoCard
+      icon={<UserGroupIcon className="w-5 h-5" />}
+      title="Workshops & Events"
+      description={
+        <>
+          Can workshops and events bring people together?{" "}
+          <AccentWarm>Absolutely</AccentWarm> — and ChronoAI can be the
+          one to host, connect, and lead that space
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="ChronoAI as the Hub"
+      description={
+        <>
+          We build the products, we host the events, we grow the tribe —
+          <Accent>community becomes our moat</Accent>
+        </>
+      }
+    />
+  </BentoSlide>,
+
+  // 8 — Section: SoulGarden 2.0
   <SectionSlide
     key="section-soulgarden"
     label="A New Chapter"
@@ -292,12 +340,12 @@ const slides = [
       }
     />
     <BentoCard
-      icon={<EyeIcon className="w-5 h-5" />}
-      title="Brand Feels Different"
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="In-House Production"
       description={
         <>
-          The <AccentWarm>new</AccentWarm> aesthetic is
-          setting the tone — playful, alive, grounded
+          Content production is <AccentWarm>in full swing</AccentWarm> —
+          creating marketing assets for user acquisition
         </>
       }
     />
