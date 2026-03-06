@@ -3,7 +3,9 @@
 @theme {
   /* Primary accent — lime/chartreuse green */
   --color-neon-cyan: #c6ff00;
-  /* Secondary accent — dimmer warm tone */
+  /* Secondary accent — blood orange */
+  --color-neon-orange: #FF5722;
+  /* Tertiary — dimmer warm tone */
   --color-neon-magenta: #888888;
   /* Tertiary accent — kept for status badges */
   --color-neon-lime: #c6ff00;

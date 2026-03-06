@@ -407,6 +407,18 @@ export function Keyword({ children }: { children: ReactNode }) {
   );
 }
 
+export function KeywordWarm({ children }: { children: ReactNode }) {
+  return (
+    <span className="text-neon-orange italic font-light" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+      {children}
+    </span>
+  );
+}
+
+export function AccentWarm({ children }: { children: ReactNode }) {
+  return <span className="text-neon-orange font-semibold">{children}</span>;
+}
+
 /* ─── Quote Slide ─── */
 
 export function QuoteSlide({
