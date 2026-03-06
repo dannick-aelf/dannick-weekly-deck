@@ -208,7 +208,52 @@ const slides = [
     }
   />,
 
-  // 7 — Section: Community
+  // 7 — PRCA Value to ChronoAI
+  <BentoSlide key="prca-value" title="What PRCA Gave ChronoAI" label="Value to the Company">
+    <BentoCard
+      icon={<ChartBarIcon className="w-5 h-5" />}
+      title="Direct Leads"
+      accent
+      description={
+        <>
+          Not just interest — <Accent>real potential clients</Accent> for MarcAI
+          who are ready to move
+        </>
+      }
+    />
+    <BentoCard
+      icon={<FireIcon className="w-5 h-5" />}
+      title="Industry Credibility"
+      description={
+        <>
+          ChronoAI is now seen as a <Bold>serious player</Bold> —
+          not a side project, a company that ships
+        </>
+      }
+    />
+    <BentoCard
+      icon={<UserGroupIcon className="w-5 h-5" />}
+      title="Strategic Relationships"
+      description={
+        <>
+          Partnerships forming with agencies and brands —
+          <AccentWarm>doors that didn&rsquo;t exist before</AccentWarm>
+        </>
+      }
+    />
+    <BentoCard
+      icon={<CheckBadgeIcon className="w-5 h-5" />}
+      title="Product Validation"
+      description={
+        <>
+          We now <Accent>know</Accent> MarcAI solves a real problem —
+          the market told us, not us telling the market
+        </>
+      }
+    />
+  </BentoSlide>,
+
+  // 8 — Section: Community
   <SectionSlide
     key="section-community"
     label="A Deeper Truth"
@@ -308,7 +353,52 @@ const slides = [
     />
   </BentoSlide>,
 
-  // 8 — Section: SoulGarden 2.0
+  // — Community Value to ChronoAI
+  <BentoSlide key="community-value" title="What Community Gives ChronoAI" label="Value to the Company">
+    <BentoCard
+      icon={<MegaphoneIcon className="w-5 h-5" />}
+      title="Brand Positioning"
+      accent
+      description={
+        <>
+          ChronoAI becomes the <Accent>go-to name</Accent> in creative AI —
+          the company that doesn&rsquo;t just build tools, but brings people together
+        </>
+      }
+    />
+    <BentoCard
+      icon={<UserGroupIcon className="w-5 h-5" />}
+      title="Organic User Acquisition"
+      description={
+        <>
+          Community members become users. Users become advocates.
+          <Bold>Growth that compounds</Bold> without paid ads
+        </>
+      }
+    />
+    <BentoCard
+      icon={<HeartIcon className="w-5 h-5" />}
+      title="Retention Through Belonging"
+      description={
+        <>
+          People stay because they <AccentWarm>belong</AccentWarm>, not just
+          because of features — that&rsquo;s the stickiest product you can build
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="SoulGarden as Living Proof"
+      description={
+        <>
+          A product that <Accent>already embodies community</Accent> —
+          shared rituals, shared growth, shared meaning
+        </>
+      }
+    />
+  </BentoSlide>,
+
+  // — Section: SoulGarden 2.0
   <SectionSlide
     key="section-soulgarden"
     label="A New Chapter"
