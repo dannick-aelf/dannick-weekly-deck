@@ -6,6 +6,7 @@ import {
   SectionSlide,
   BentoSlide,
   BentoCard,
+  VideoSlide,
   QuoteSlide,
   Bold,
   Accent,
@@ -26,6 +27,8 @@ import {
   DevicePhoneMobileIcon,
   EyeIcon,
   FireIcon,
+  VideoCameraIcon,
+  FilmIcon,
 } from "@heroicons/react/24/outline";
 
 const slides = [
@@ -196,7 +199,7 @@ const slides = [
     number="03"
   />,
 
-  // 8 — SoulGarden 2.0 + Visual Direction
+  // 8 — SoulGarden 2.0 Overview
   <BentoSlide key="soulgarden-v2" title="The 2.0 Evolution" label="SoulGarden">
     <BentoCard
       icon={<DevicePhoneMobileIcon className="w-5 h-5" />}
@@ -241,7 +244,132 @@ const slides = [
     />
   </BentoSlide>,
 
-  // 9 — Closing
+  // 9 — Manifest Video
+  <VideoSlide
+    key="soulgarden-manifest"
+    title="Manifest Your Reality"
+    label="SoulGarden 2.0"
+    video="/images/sg2-manifest.mp4"
+  >
+    <BentoCard
+      icon={<VideoCameraIcon className="w-5 h-5" />}
+      title="Brand Video: Manifest"
+      accent
+      description={
+        <>
+          The new <Accent>SoulGarden anthem</Accent> — setting the emotional
+          tone for everything 2.0 is about
+        </>
+      }
+    />
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="AI Manifestation, Visualized"
+      description={
+        <>
+          Not just an app — a <Bold>feeling</Bold>, a world you step into
+        </>
+      }
+    />
+  </VideoSlide>,
+
+  // 10 — Visual Direction: Reality Series
+  <BentoSlide key="soulgarden-visuals-1" title="The Reality Series" label="Visual Direction">
+    <BentoCard
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="Reality 1"
+      accent
+      span={1}
+      video="/images/sg2-reality-1.mp4"
+      description={<>Organic motion — <Accent>nature meets intention</Accent></>}
+    />
+    <BentoCard
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="Reality 2"
+      span={1}
+      video="/images/sg2-reality-2.mp4"
+      description={<>Ethereal landscapes of the <Bold>inner world</Bold></>}
+    />
+    <BentoCard
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="Reality 3"
+      span={1}
+      video="/images/sg2-reality-3.mp4"
+      description={<>Subtle, <AccentWarm>dreamlike</AccentWarm> textures</>}
+    />
+    <BentoCard
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="Reality 4"
+      span={1}
+      video="/images/sg2-reality-4.mp4"
+      description={<>Where <Bold>manifestation</Bold> takes form</>}
+    />
+  </BentoSlide>,
+
+  // 11 — Visual Direction: More Reality + Art Direction
+  <BentoSlide key="soulgarden-visuals-2" title="Art Direction Exploration" label="Visual Direction">
+    <BentoCard
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="Reality 5"
+      accent
+      span={1}
+      video="/images/sg2-reality-5.mp4"
+      description={<>Depth and <Accent>presence</Accent></>}
+    />
+    <BentoCard
+      icon={<FilmIcon className="w-5 h-5" />}
+      title="Reality 6"
+      span={1}
+      video="/images/sg2-reality-6.mp4"
+      description={<>The world <Bold>responds</Bold> to you</>}
+    />
+    <BentoCard
+      icon={<EyeIcon className="w-5 h-5" />}
+      title="Subtle Motion"
+      span={1}
+      video="/images/sg2-visual-subtle.mp4"
+      description={<>Gentle movement — <AccentWarm>alive but calm</AccentWarm></>}
+    />
+    <BentoCard
+      icon={<PaintBrushIcon className="w-5 h-5" />}
+      title="Still Frame"
+      span={1}
+      video="/images/sg2-visual-still.mp4"
+      description={<>The <Bold>stillness</Bold> between breaths</>}
+    />
+  </BentoSlide>,
+
+  // 12 — Your Vision
+  <VideoSlide
+    key="soulgarden-your"
+    title="Your SoulGarden"
+    label="SoulGarden 2.0"
+    video="/images/sg2-your.mp4"
+  >
+    <BentoCard
+      icon={<SparklesIcon className="w-5 h-5" />}
+      title="It's Yours"
+      accent
+      description={
+        <>
+          Every garden is <Accent>unique</Accent> — shaped by your
+          intentions, your energy, your story
+        </>
+      }
+    />
+    <BentoCard
+      icon={<HeartIcon className="w-5 h-5" />}
+      title="March 12: First Bloom"
+      description={
+        <>
+          The soft launch brings it all together — <Bold>product,
+          community, vision</Bold>
+        </>
+      }
+    />
+  </VideoSlide>,
+
+  // 13 — Closing
   <QuoteSlide
     key="closing"
     quote="Build the product. Find your people. The rest follows."
