@@ -35,6 +35,7 @@ export function SlideShell({ slides, title }: SlideShellProps) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const [showControls, setShowControls] = useState(true);
+  const [hasNavigated, setHasNavigated] = useState(false);
   const total = slides.length;
 
   const goTo = useCallback(
@@ -42,6 +43,7 @@ export function SlideShell({ slides, title }: SlideShellProps) {
       if (index < 0 || index >= total) return;
       setDirection(index > current ? 1 : -1);
       setCurrent(index);
+      setHasNavigated(true);
     },
     [current, total]
   );
@@ -145,7 +147,7 @@ export function SlideShell({ slides, title }: SlideShellProps) {
           key={current}
           custom={direction}
           variants={slideVariants}
-          initial="enter"
+          initial={hasNavigated ? "enter" : "center"}
           animate="center"
           exit="exit"
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
