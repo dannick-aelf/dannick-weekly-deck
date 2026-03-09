@@ -371,7 +371,7 @@ const slides = [
       title="Organic User Acquisition"
       description={
         <>
-          Community members become users. Users become advocates.
+          Community members become users. Users become advocates.{" "}
           <Bold>Growth that compounds</Bold> without paid ads
         </>
       }
