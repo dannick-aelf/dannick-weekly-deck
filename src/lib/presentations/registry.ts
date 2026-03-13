@@ -11,6 +11,16 @@ export interface PresentationEntry {
 
 export const presentations: PresentationEntry[] = [
   {
+    slug: "today-2026-03-13",
+    title: "Today: Mar 13, 2026",
+    weekNumber: 11,
+    year: 2026,
+    dateRangeStart: "2026-03-13",
+    dateRangeEnd: "2026-03-13",
+    slideCount: 11,
+    status: "draft",
+  },
+  {
     slug: "week-11-2026",
     title: "Week 11: Mar 9 – Mar 15",
     weekNumber: 11,
